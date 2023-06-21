@@ -30,31 +30,31 @@ public class OclockView extends View {
     //圆心点x和y坐标,x=y
     private int mCenterPoint;
     //刻度笔,为浅白色
-    private Paint paint;
+    private final Paint paint;
     //当前刻度笔，为白色
-    private Paint time_paint;
+    private final Paint time_paint;
     //中心圆环笔
-    private Paint center_paint;
+    private final Paint center_paint;
     //渐变比
-    private Paint change_paint;
+    private final Paint change_paint;
     //秒针比
-    private Paint sPaint;
+    private final Paint sPaint;
     //分针比
-    private Paint mPaint;
+    private final Paint mPaint;
     //是真比
-    private Paint hPaint;
+    private final Paint hPaint;
     //圆的半径,设置为屏幕的三分之一
     private int radius;
     //屏幕边缘到圆环的距离
     private int distance;
     /* 触摸时作用在Camera的矩阵 */
-    private Matrix mCameraMatrix;
+    private final Matrix mCameraMatrix;
     //用于实现3d效果
-    private Camera mCamera;
+    private final Camera mCamera;
     //处理钟表动画
     private ValueAnimator valueAnimator;
     //camera旋转的最大角度
-    private float mMaxCameraRotate = 10;
+    private final float mMaxCameraRotate = 10;
     /* camera绕X轴旋转的角度 */
     private float mCameraRotateX;
     /* camera绕Y轴旋转的角度 */
@@ -73,27 +73,28 @@ public class OclockView extends View {
     private float mSecondDegree;
 
     /* 渐变矩阵，作用在SweepGradient */
-    private Matrix mGradientMatrix;
+    private final Matrix mGradientMatrix;
     /* 梯度扫描渐变 */
     private SweepGradient mSweepGradient;
 
-    private int weithColor;
-    private int grayColor;
+    private final int weithColor;
+    private final int grayColor;
     private Canvas mCanvas;
 
     /* 时针路径 */
-    private Path mHourHandPath;
+    private final Path mHourHandPath;
     /* 分针路径 */
-    private Path mMinuteHandPath;
+    private final Path mMinuteHandPath;
     /* 秒针路径 */
-    private Path mSecondHandPath;
-    private RectF mCircleRectF;
+    private final Path mSecondHandPath;
+    private final RectF mCircleRectF;
+
     public OclockView(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public OclockView(Context context, AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public OclockView(Context context, AttributeSet attrs, int defStyleAttr) {

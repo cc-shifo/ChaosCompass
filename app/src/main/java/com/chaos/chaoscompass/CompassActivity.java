@@ -4,8 +4,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class CompassActivity extends AppCompatActivity {
     private SensorManager mSensorManager;
@@ -16,7 +16,7 @@ public class CompassActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compass);
-        chaosCompassView = (ChaosCompassView) findViewById(R.id.ccv);
+        chaosCompassView = findViewById(R.id.ccv);
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
 

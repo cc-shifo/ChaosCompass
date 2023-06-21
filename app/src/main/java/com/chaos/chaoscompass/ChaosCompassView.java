@@ -26,7 +26,7 @@ import android.view.View;
 
 public class ChaosCompassView extends View{
     private Canvas mCanvas;
-    private Context mContext;
+    private final Context mContext;
     //View矩形的宽度
     private int width;
     //指南针圆心点坐标
@@ -39,43 +39,43 @@ public class ChaosCompassView extends View{
     //指南针文字大小空间高度
     private int mTextHeight;
     //暗红色 外圈笔
-    private Paint mDarkRedPaint;
+    private final Paint mDarkRedPaint;
     //深灰 外圈笔
-    private Paint mDeepGrayPaint;
+    private final Paint mDeepGrayPaint;
     //外三角笔
-    private Paint mOutSideCircumPaint;
+    private final Paint mOutSideCircumPaint;
     //浅灰 外圈笔
-    private Paint mLightGrayPaint;
+    private final Paint mLightGrayPaint;
     //指南针上面 文字笔
-    private Paint mTextPaint;
+    private final Paint mTextPaint;
     //外接圆，三角形笔
-    private Paint mCircumPaint;
+    private final Paint mCircumPaint;
     //指南针上面文字的外接矩形,用来测文字大小让文字居中
-    private Rect mTextRect;
+    private final Rect mTextRect;
     //外圈小三角形的Path
-    private Path mOutsideTriangle;
+    private final Path mOutsideTriangle;
     //外接圆小三角形的Path
-    private Path mCircumTriangle;
+    private final Path mCircumTriangle;
 
     //NESW 文字笔 和文字外接矩形
-    private Paint mNorthPaint;
-    private Paint mOthersPaint;
-    private Rect  mPositionRect;
+    private final Paint mNorthPaint;
+    private final Paint mOthersPaint;
+    private final Rect mPositionRect;
     //小刻度文字大小矩形和画笔
-    private Paint mSamllDegreePaint;
+    private final Paint mSamllDegreePaint;
     //两位数的
-    private Rect mSencondRect;
+    private final Rect mSencondRect;
     //三位数的
-    private Rect mThirdRect;
+    private final Rect mThirdRect;
     //圆心数字矩形
-    private Rect mCenterTextRect;
+    private final Rect mCenterTextRect;
 
     //中心文字笔
-    private Paint mCenterPaint;
+    private final Paint mCenterPaint;
 
     //内心圆是一个颜色辐射渐变的圆
     private Shader mInnerShader;
-    private Paint mInnerPaint;
+    private final Paint mInnerPaint;
 
     //定义个点击属性动画
     private ValueAnimator mValueAnimator;
@@ -84,7 +84,7 @@ public class ChaosCompassView extends View{
     // camera绕Y轴旋转的角度
     private float mCameraRotateY;
     //camera最大旋转角度
-    private float mMaxCameraRotate = 10;
+    private final float mMaxCameraRotate = 10;
 
     // camera绕X轴旋转的角度
     private float mCameraTranslateX;
@@ -93,14 +93,14 @@ public class ChaosCompassView extends View{
     //camera最大旋转角度
     private float mMaxCameraTranslate;
     //camera矩阵
-    private Matrix mCameraMatrix;
+    private final Matrix mCameraMatrix;
     //设置camera
-    private Camera mCamera;
+    private final Camera mCamera;
 
     private float val=0f;
     private float valCompare;
     //偏转角度红线笔
-    private Paint mAnglePaint;
+    private final Paint mAnglePaint;
 
     //方位文字
     private String text="北";
@@ -259,7 +259,7 @@ public class ChaosCompassView extends View{
     }
 
     private void drawCenterText() {
-        String centerText=String.valueOf((int) val+"°");
+        String centerText = (int) val + "°";
         mCenterPaint.getTextBounds(centerText,0,centerText.length(),mCenterTextRect);
         int centerTextWidth = mCenterTextRect.width();
         int centerTextHeight = mCenterTextRect.height();
